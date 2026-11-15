@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 434" width="960" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" role="img" aria-label="Agent zbiera, filtruje i szereguje oferty, potem pisze dla każdej oferty 1 CV i 1 wiadomość. Kandydat zatwierdza każdą wysyłkę i rozwiązuje każdą CAPTCHA. Ledger zapisuje każdą próbę.">
+<rect width="960" height="434" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#111111"/></marker></defs>
+<text x="16" y="32" font-size="15" font-weight="bold" fill="#111111">Agent zbiera, filtruje i szereguje oferty, potem pisze dla każdej oferty 1 CV i 1 wiadomość.</text>
+<text x="16" y="53" font-size="15" font-weight="bold" fill="#111111">Kandydat zatwierdza każdą wysyłkę i rozwiązuje każdą CAPTCHA. Ledger zapisuje każdą próbę.</text>
+<polyline points="230,122.5 254,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="468,122.5 492,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="706,122.5 730,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="837,173 837,188 123,188 123,203" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="230,253.5 254,253.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="468,253.5 492,253.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="706,253.5 730,253.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="361,334 361,304" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="16" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="24" y="93" fill="#111111" font-weight="bold">1. Zbieranie ofert</text>
+<text x="24" y="110" fill="#111111">justjoin.it, No Fluff</text>
+<text x="24" y="127" fill="#111111">Jobs, CBOP; z --abroad</text>
+<text x="24" y="144" fill="#111111">także Remotive, Remote OK,</text>
+<text x="24" y="161" fill="#111111">Himalayas</text>
+<rect x="254" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="262" y="93" fill="#111111" font-weight="bold">2. Filtr</text>
+<text x="262" y="110" fill="#111111">miejsce pracy, pensja</text>
+<text x="262" y="127" fill="#111111">co najmniej minimum</text>
+<text x="262" y="144" fill="#111111">z profilu; pomija trasy</text>
+<text x="262" y="161" fill="#111111">z ledgera</text>
+<rect x="492" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="500" y="93" fill="#111111" font-weight="bold">3. Kolejność</text>
+<text x="500" y="110" fill="#111111">oferty AI na początku,</text>
+<text x="500" y="127" fill="#111111">potem od najnowszej;</text>
+<text x="500" y="144" fill="#111111">każda rola IT, każdy</text>
+<text x="500" y="161" fill="#111111">poziom</text>
+<rect x="730" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="738" y="101.5" fill="#111111" font-weight="bold">4. CV pod ofertę</text>
+<text x="738" y="118.5" fill="#111111">build_batch.py: nagłówek,</text>
+<text x="738" y="135.5" fill="#111111">profil, klauzula RODO</text>
+<text x="738" y="152.5" fill="#111111">z administratorem danych</text>
+<rect x="16" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="24" y="224" fill="#111111" font-weight="bold">5. Wiadomość pod ofertę</text>
+<text x="24" y="241" fill="#111111">od 4 do 6 zdań, link do</text>
+<text x="24" y="258" fill="#111111">1 repo; make_plan.py</text>
+<text x="24" y="275" fill="#111111">odrzuca plan bez</text>
+<text x="24" y="292" fill="#111111">wiadomości</text>
+<rect x="254" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="262" y="232.5" fill="#111111" font-weight="bold">6. Wysyłka</text>
+<text x="262" y="249.5" fill="#111111">e-mail albo formularz;</text>
+<text x="262" y="266.5" fill="#111111">panel e-mail zostaje</text>
+<text x="262" y="283.5" fill="#111111">w repo prywatnym</text>
+<rect x="492" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="500" y="241" fill="#111111" font-weight="bold">7. Ledger</text>
+<text x="500" y="258" fill="#111111">record.py: stan, dowód</text>
+<text x="500" y="275" fill="#111111">z ekranu, SHA-256 CV</text>
+<rect x="730" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="738" y="241" fill="#111111" font-weight="bold">8. Statystyki</text>
+<text x="738" y="258" fill="#111111">stats.py: tylko liczby,</text>
+<text x="738" y="275" fill="#111111">JSON i wykres SVG</text>
+<rect x="254" y="334" width="214" height="84" fill="#ffffff" stroke="#c8102e" stroke-width="2"/>
+<text x="262" y="355" fill="#c8102e" font-weight="bold">Kandydat</text>
+<text x="262" y="372" fill="#111111">zatwierdza każdą wysyłkę,</text>
+<text x="262" y="389" fill="#111111">rozwiązuje każdą CAPTCHA,</text>
+<text x="262" y="406" fill="#111111">ustala zasady</text>
+</svg>

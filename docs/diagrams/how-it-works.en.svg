@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 434" width="960" font-family="'JetBrains Mono', ui-monospace, Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="12.5" role="img" aria-label="The agent collects, filters and ranks offers, then writes one CV and one message per offer. The candidate approves every send and solves every CAPTCHA; a ledger records every attempt.">
+<rect width="960" height="434" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#111111"/></marker></defs>
+<text x="16" y="32" font-size="15" font-weight="bold" fill="#111111">The agent collects, filters and ranks offers, then writes one CV and one message per offer.</text>
+<text x="16" y="53" font-size="15" font-weight="bold" fill="#111111">The candidate approves every send and solves every CAPTCHA; a ledger records every attempt.</text>
+<polyline points="230,122.5 254,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="468,122.5 492,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="706,122.5 730,122.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="837,173 837,188 123,188 123,203" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="230,253.5 254,253.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="468,253.5 492,253.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="706,253.5 730,253.5" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<polyline points="361,334 361,304" fill="none" stroke="#111111" stroke-width="1.5" marker-end="url(#arrow)"/>
+<rect x="16" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="24" y="93" fill="#111111" font-weight="bold">1. Collect offers</text>
+<text x="24" y="110" fill="#111111">justjoin.it, No Fluff</text>
+<text x="24" y="127" fill="#111111">Jobs, CBOP; with --abroad</text>
+<text x="24" y="144" fill="#111111">also Remotive, Remote OK,</text>
+<text x="24" y="161" fill="#111111">Himalayas</text>
+<rect x="254" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="262" y="93" fill="#111111" font-weight="bold">2. Filter</text>
+<text x="262" y="110" fill="#111111">place of work, pay at</text>
+<text x="262" y="127" fill="#111111">least the profile floor;</text>
+<text x="262" y="144" fill="#111111">skip routes already</text>
+<text x="262" y="161" fill="#111111">in a ledger</text>
+<rect x="492" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="500" y="101.5" fill="#111111" font-weight="bold">3. Rank</text>
+<text x="500" y="118.5" fill="#111111">AI offers first,</text>
+<text x="500" y="135.5" fill="#111111">then the newest;</text>
+<text x="500" y="152.5" fill="#111111">every IT role, every level</text>
+<rect x="730" y="72" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="738" y="101.5" fill="#111111" font-weight="bold">4. CV per offer</text>
+<text x="738" y="118.5" fill="#111111">build_batch.py: headline,</text>
+<text x="738" y="135.5" fill="#111111">profile, GDPR clause</text>
+<text x="738" y="152.5" fill="#111111">with the data controller</text>
+<rect x="16" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="24" y="224" fill="#111111" font-weight="bold">5. Message per offer</text>
+<text x="24" y="241" fill="#111111">4 to 6 sentences, a link</text>
+<text x="24" y="258" fill="#111111">to 1 repository;</text>
+<text x="24" y="275" fill="#111111">make_plan.py rejects a</text>
+<text x="24" y="292" fill="#111111">plan without it</text>
+<rect x="254" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="262" y="232.5" fill="#111111" font-weight="bold">6. Send</text>
+<text x="262" y="249.5" fill="#111111">e-mail or web form;</text>
+<text x="262" y="266.5" fill="#111111">the e-mail panel stays</text>
+<text x="262" y="283.5" fill="#111111">in the private repo</text>
+<rect x="492" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="500" y="241" fill="#111111" font-weight="bold">7. Ledger</text>
+<text x="500" y="258" fill="#111111">record.py: state, screen</text>
+<text x="500" y="275" fill="#111111">evidence, CV SHA-256</text>
+<rect x="730" y="203" width="214" height="101" fill="#f2f2f2" stroke="#111111" stroke-width="1.5"/>
+<text x="738" y="241" fill="#111111" font-weight="bold">8. Statistics</text>
+<text x="738" y="258" fill="#111111">stats.py: counts only,</text>
+<text x="738" y="275" fill="#111111">JSON and an SVG chart</text>
+<rect x="254" y="334" width="214" height="84" fill="#ffffff" stroke="#c8102e" stroke-width="2"/>
+<text x="262" y="355" fill="#c8102e" font-weight="bold">Candidate</text>
+<text x="262" y="372" fill="#111111">approves every send,</text>
+<text x="262" y="389" fill="#111111">solves every CAPTCHA,</text>
+<text x="262" y="406" fill="#111111">sets the rules</text>
+</svg>
