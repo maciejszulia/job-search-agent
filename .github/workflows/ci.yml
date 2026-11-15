@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Self-checks that need only the standard library
+        run: |
+          python -I tools/stats.py --demo
+          python -I tools/fetch_it_offers.py --demo
+          python -I tools/cbop_scan.py --demo
+          python -I tools/make_plan.py
+          python -I tools/record.py --demo
+          python -I tools/correct_cv.py --selftest
+          python -I tools/build_batch.py --demo
+      - name: Install LibreOffice and the CV document libraries
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends libreoffice-writer fonts-liberation
+          pip install python-docx pymupdf
+      - name: Build and verify a demo CV (DOCX to PDF)
+        run: python -I tools/build_cv.py --demo
