@@ -1,0 +1,22 @@
+{
+ "name": "Jan Przykładowy",
+ "cv_file_prefix": "CV_Jan_Przykladowy",
+ "home": {"city": "lublin", "lat": 51.2465, "lon": 22.5684, "max_km": 50},
+ "min_net_pln": 4000,
+ "links": ["git.example.com/jan", "code.example.org/jan", "www.example.com"],
+ "repo_prefix": "git.example.com/jan/",
+ "contact_links": ["code.example.org/jan", "git.example.com/jan"],
+ "headline": {
+  "pl": "Specjalista automatyzacji — systemy informacyjne",
+  "en": "Automation specialist — information systems"
+ },
+ "profile": {
+  "pl": "Specjalista automatyzacji, absolwent informatyki. Buduję i utrzymuję system rezerwacji dla małej firmy.",
+  "en": "Automation specialist, Computer Science graduate. I build and maintain a booking system for a small business."
+ },
+ "baseline_cv": {"pl": "baseline-pl.md", "en": "baseline-en.md"},
+ "cv_line_replacements": {
+  "pl": [["> Lublin · praca stacjonarna", "> Lublin · praca zdalna, hybrydowa albo stacjonarna · pełny etat"]],
+  "en": [["> Lublin, Poland · on-site", "> Lublin, Poland · remote, hybrid or on-site · full time"]]
+ }
+}
