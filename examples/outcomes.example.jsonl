@@ -1,0 +1,4 @@
+{"date": "2026-10-05", "event": "refusal", "ref": "employer-a", "source": "mail thread, label refused"}
+{"date": "2026-10-08", "event": "cv_filed", "ref": "employer-b", "source": "mail thread"}
+{"date": "2026-11-03", "event": "other_reply", "ref": "employer-c", "source": "mail thread"}
+{"date": "2026-11-04", "event": "interview_invitation", "ref": "employer-d", "source": "phone call noted in the handoff"}

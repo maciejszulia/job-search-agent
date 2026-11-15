@@ -1,0 +1,53 @@
+{
+ "period": {
+  "first_application": "2026-09-21",
+  "last_application": "2026-11-15"
+ },
+ "totals": {
+  "unique_applications": 162,
+  "resends": 80,
+  "thread_messages": 17,
+  "incomplete_routes": 13
+ },
+ "unique_by_month": {
+  "2026-09": 2,
+  "2026-10": 83,
+  "2026-11": 77
+ },
+ "resends_by_month": {
+  "2026-11": 80
+ },
+ "unique_by_channel": {
+  "email": 102,
+  "pracuj.pl": 31,
+  "other_form": 18,
+  "justjoin.it": 9,
+  "nofluffjobs.com": 2
+ },
+ "unique_by_offer_type": {
+  "job_ad": 96,
+  "spontaneous": 58,
+  "public_employment_service": 8
+ },
+ "responses": {
+  "total": 22,
+  "refusal": 16,
+  "cv_filed": 3,
+  "other_reply": 2,
+  "interview_invitation": 1
+ },
+ "responses_by_month": {
+  "2026-10": {
+   "refusal": 6,
+   "cv_filed": 2,
+   "other_reply": 1,
+   "interview_invitation": 0
+  },
+  "2026-11": {
+   "refusal": 10,
+   "cv_filed": 1,
+   "other_reply": 1,
+   "interview_invitation": 1
+  }
+ }
+}

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300" role="img" aria-labelledby="title desc">
+<style>svg{font-family:system-ui,-apple-system,"Segoe UI",sans-serif}.bg{fill:#fcfcfb}.ink{fill:#0b0b0b}.sub{fill:#52514e}.bar{fill:#2a78d6}.axis{stroke:#c3c2b7}@media (prefers-color-scheme:dark){.bg{fill:#1a1a19}.ink{fill:#f0efec}.sub{fill:#c3c2b7}.bar{fill:#3987e5}.axis{stroke:#383835}}</style>
+<title id="title">162 zgłoszenia dały 22 odpowiedzi i 1 zaproszenie na rozmowę</title>
+<desc id="desc">Zgłoszenia unikalne: 162; Wysyłki ponowne: 80; Odmowy: 16; CV zapisane w bazie: 3; Inne odpowiedzi: 2; Zaproszenia na rozmowę: 1</desc>
+<rect class="bg" width="760" height="300" rx="8"/>
+<text class="ink" x="24" y="36" font-size="18" font-weight="600">162 zgłoszenia dały 22 odpowiedzi i 1 zaproszenie na rozmowę</text>
+<text class="sub" x="24" y="60" font-size="13">Zgłoszenia od 2026-09-21 do 2026-11-15. Odpowiedź oznacza wiadomość od osoby po stronie pracodawcy.</text>
+<g><title>Zgłoszenia unikalne: 162</title><text class="ink" x="218" y="101" font-size="13" text-anchor="end">Zgłoszenia unikalne</text><path class="bar" d="M230 87H666.0A4.0 4.0 0 0 1 670.0 91.0V103.0A4.0 4.0 0 0 1 666.0 107H230Z"/><text class="ink" x="678.0" y="101" font-size="13">162</text></g>
+<g><title>Wysyłki ponowne: 80</title><text class="ink" x="218" y="135" font-size="13" text-anchor="end">Wysyłki ponowne</text><path class="bar" d="M230 121H443.3A4.0 4.0 0 0 1 447.3 125.0V137.0A4.0 4.0 0 0 1 443.3 141H230Z"/><text class="ink" x="455.3" y="135" font-size="13">80</text></g>
+<g><title>Odmowy: 16</title><text class="ink" x="218" y="169" font-size="13" text-anchor="end">Odmowy</text><path class="bar" d="M230 155H269.5A4.0 4.0 0 0 1 273.5 159.0V171.0A4.0 4.0 0 0 1 269.5 175H230Z"/><text class="ink" x="281.5" y="169" font-size="13">16</text></g>
+<g><title>CV zapisane w bazie: 3</title><text class="ink" x="218" y="203" font-size="13" text-anchor="end">CV zapisane w bazie</text><path class="bar" d="M230 189H234.1A4.0 4.0 0 0 1 238.1 193.0V205.0A4.0 4.0 0 0 1 234.1 209H230Z"/><text class="ink" x="246.1" y="203" font-size="13">3</text></g>
+<g><title>Inne odpowiedzi: 2</title><text class="ink" x="218" y="237" font-size="13" text-anchor="end">Inne odpowiedzi</text><path class="bar" d="M230 223H232.7A2.7 2.7 0 0 1 235.4 225.7V240.3A2.7 2.7 0 0 1 232.7 243H230Z"/><text class="ink" x="243.4" y="237" font-size="13">2</text></g>
+<g><title>Zaproszenia na rozmowę: 1</title><text class="ink" x="218" y="271" font-size="13" text-anchor="end">Zaproszenia na rozmowę</text><path class="bar" d="M230 257H231.4A1.4 1.4 0 0 1 232.7 258.4V275.6A1.4 1.4 0 0 1 231.4 277H230Z"/><text class="ink" x="240.7" y="271" font-size="13">1</text></g>
+<line class="axis" x1="230" y1="82" x2="230" y2="280" stroke-width="1"/>
+</svg>
