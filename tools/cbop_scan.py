@@ -16,7 +16,8 @@ from pathlib import Path
 API = 'https://oferty.praca.gov.pl/portal-api/v3/oferta/wyszukiwanie?page={}&size=200'
 OFFICE = re.compile(r'biur|administr|referent|sekretar|informaty|asystent|specjalist|analityk|kadr|recepcj|'
                     r'wprowadzan|dokument|archiw|obsług[ai] klient|koordynator|helpdesk|wsparci|it\b|'
-                    r'\bweb|program|tester|grafik|redaktor|tłumacz', re.I)
+                    r'\bweb|program|tester|grafik|redaktor|tłumacz|'
+                    r'team lead|engineering manager|project manager|product owner|head of\b', re.I)  # managerial roles from 2026-11-16
 # hard exclusions: physical or manual work, target-driven sales, telemarketing
 EXCLUDE = re.compile(r'sprzedaw|handlow|przedstawiciel|telemarket|kierowc|magazyn|fizyczn|sprząt|kuchar|'
                      r'monter|operator (wózk|maszyn|koparki)|produkcj|pomocnik|ochron|opiekun|pielęgn|'
@@ -76,6 +77,10 @@ def demo():
               dict(base, id='6', stanowisko='Referent', dlaOsobZarej=True, miejscePracyLatitude=51.30, miejscePracyLongitude=22.60)]
     got = [h['id'] for h in pick(offers, home, 50)]
     assert got == ['1', '3'], got     # far, sales, no e-mail and registered-only offers dropped
+    lead = ['Team Lead', 'Engineering Manager', 'Project Manager', 'Product Owner', 'Head of AI', 'Head office cleaner']
+    near = dict(base, miejscePracyLatitude=51.30, miejscePracyLongitude=22.60)
+    got = [h['stanowisko'] for h in pick([dict(near, id=str(i), stanowisko=t) for i, t in enumerate(lead)], home, 50)]
+    assert got == lead[:5], got       # managerial roles pass; 'head office' is not 'head of'
     assert 140 < km(home, 52.23, 21.01) < 160
     return 'ok'
 

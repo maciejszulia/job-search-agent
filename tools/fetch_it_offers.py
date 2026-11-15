@@ -3,8 +3,10 @@
 
 Rules: every IT role at every level, AI roles first; remote, hybrid in a Polish city, or any mode in
 the candidate's home city; offers already in a ledger are skipped; pay below the floor is dropped.
+With --abroad the shortlist also takes remote offers of foreign companies (Remotive, Remote OK, Himalayas)
+that are open to candidates in Poland.
 
-Usage:  python3 -I tools/fetch_it_offers.py --profile PROFILE.json [--seen LEDGER ...] [--pages=N] > shortlist.jsonl
+Usage:  python3 -I tools/fetch_it_offers.py --profile PROFILE.json [--seen LEDGER ...] [--pages=N] [--abroad] > shortlist.jsonl
         python3 -I tools/fetch_it_offers.py --demo
 A --seen file is either a JSON queue with an "applications" list or a JSONL ledger with an "offer" URL per line.
 """
@@ -87,8 +89,47 @@ def from_nfj(p):
             "languages": []}
 
 
+# --abroad: remote work for foreign companies first.
+# ponytail: relocation offers (EURES, StepStone.de) have no open API here; add a source when one answers
+OPEN_TO_PL = re.compile(r"worldwide|anywhere|europe|\beu\b|emea|poland|polska|\bcet\b|cest|gmt\s?\+\s?[0-3]\b|utc\s?\+\s?[0-3]\b", re.I)
+
+
+def remote_row(source, url, apply, title, company, level, where, salary, tags, published):
+    return {"source": source, "url": url, "apply": apply or url, "apply_method": "external", "title": title.strip(),
+            "company": company.strip(), "level": level, "workplace": "remote", "cities": [], "abroad": True,
+            "open_to": where, "salary": salary, "ai": bool(AI.search(title) or AI.search(" ".join(tags))),
+            "published": published, "languages": [{"code": "en"}]}
+
+
+def foreign_offers():
+    rows = []
+    for cat in ("software-dev", "data", "devops", "qa", "product"):
+        for j in get(f"https://remotive.com/api/remote-jobs?category={cat}")["jobs"]:
+            rows.append(remote_row("remotive.com", j["url"], j["url"], j["title"], j["company_name"], None,
+                                   j.get("candidate_required_location") or "", None, j.get("tags") or [],
+                                   (j.get("publication_date") or "")[:10]))
+    for j in get("https://remoteok.com/api"):
+        if isinstance(j, dict) and j.get("position"):
+            sal = {"from": j.get("salary_min"), "to": j.get("salary_max"), "currency": "USD", "type": "any", "unit": "year"} if j.get("salary_max") else None
+            rows.append(remote_row("remoteok.com", j["url"], j.get("apply_url"), j["position"], j.get("company") or "", None,
+                                   j.get("location") or "", sal, j.get("tags") or [], (j.get("date") or "")[:10]))
+    for offset in range(0, 500, 100):
+        jobs = get(f"https://himalayas.app/jobs/api?limit=100&offset={offset}").get("jobs") or []
+        for j in jobs:
+            rows.append(remote_row("himalayas.app", j.get("applicationLink") or "", j.get("applicationLink"), j["title"],
+                                   j.get("companyName") or "", (j.get("seniority") or [None])[0] if isinstance(j.get("seniority"), list) else j.get("seniority"),
+                                   ", ".join(j.get("locationRestrictions") or []) or "worldwide", None, j.get("categories") or [],
+                                   time.strftime("%Y-%m-%d", time.gmtime(j.get("pubDate") or 0))))
+        if len(jobs) < 100:
+            break
+        time.sleep(0.3)
+    return rows
+
+
 def eligible(r, home):
-    """Remote anywhere, hybrid in a Polish city, or any mode in the home city."""
+    """Remote anywhere, hybrid in a Polish city, or any mode in the home city; a foreign remote offer must be open to Poland."""
+    if r.get("abroad"):
+        return not r["open_to"].strip() or bool(OPEN_TO_PL.search(r["open_to"]))
     cities = {c.lower() for c in r["cities"]}
     if r["workplace"] == "remote" or home in cities:
         return True
@@ -152,10 +193,19 @@ def demo():
     assert pays_enough({"to": 40, "currency": "PLN", "type": "b2b", "unit": "hour"}, 4000)
     assert not pays_enough({"to": 5000, "currency": "PLN", "type": "permanent", "unit": "month", "gross": True}, 4000)
     assert AI.search("Senior LLM Platform Engineer") and not AI.search("Email marketing specialist")
+    abroad = lambda where: dict(base, url="https://y/" + where, title="ML Engineer", company="F" + where, workplace="remote",
+                                cities=[], ai=True, published="2026-11-15", abroad=True, open_to=where)
+    got = [r["open_to"] for r in shortlist([abroad("USA only"), abroad("Europe"), abroad(""), abroad("UTC+1")], set(), "lublin", 4000)]
+    assert got == ["Europe", "", "UTC+1"], got   # a foreign offer closed to Poland is dropped
+    # managerial roles (applied for from 2026-11-16) pass: the tool filters place, pay and ledger, never the title
+    lead = ["Team Lead", "Engineering Manager", "IT Project Manager", "Product Owner", "Head of AI"]
+    rows = [dict(base, url=f"https://z/{i}", title=t, company="G", workplace="remote", cities=[], ai=False, published="2026-11-16")
+            for i, t in enumerate(lead)]
+    assert sorted(r["title"] for r in shortlist(rows, set(), "lublin", 4000)) == sorted(lead)
     return "ok"
 
 
-def main(profile, seen, pages):
+def main(profile, seen, pages, abroad=False):
     home, min_net = profile["home"]["city"].lower(), profile["min_net_pln"]
     rows = [from_jj(o) for o in jj_offers("categories=ai", 70)]
     rows += [from_jj(o) for o in jj_offers(f"city={home}", 20)]
@@ -163,6 +213,8 @@ def main(profile, seen, pages):
     rows += [from_nfj(p) for p in nfj_offers("category=artificial-intelligence", 10)]
     rows += [from_nfj(p) for p in nfj_offers("remote", pages)]
     rows += [from_nfj(p) for p in nfj_offers(f"city={home}", 5)]
+    if abroad:
+        rows += foreign_offers()
     out = shortlist(rows, ledger_keys(seen), home, min_net)
     for r in out:
         print(json.dumps(r, ensure_ascii=False))
@@ -178,4 +230,4 @@ if __name__ == "__main__":
     if not value("--profile"):
         raise SystemExit(__doc__)
     main(json.loads(Path(value("--profile")[0]).read_text(encoding="utf-8")), value("--seen"),
-         int(next((a.split("=", 1)[1] for a in args if a.startswith("--pages=")), "20")))
+         int(next((a.split("=", 1)[1] for a in args if a.startswith("--pages=")), "20")), "--abroad" in args)
