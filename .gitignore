@@ -1,0 +1,3 @@
+__pycache__/
+# Private inputs and outputs stay outside Git: profile, ledgers, outcomes, CVs.
+/private/
