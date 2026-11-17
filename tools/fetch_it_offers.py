@@ -35,17 +35,22 @@ def get(url, data=None):
         return json.load(r)
 
 
-def jj_offers(query, pages):
-    out, start = [], 0
-    for _ in range(pages):
+def jj_offers(query, pages=None):
+    """Offers of one justjoin.it query; pages=None reads every page. A cap that cuts the list says so on stderr,
+    because a silent cap once hid 14 of 25 junior offers in one category (filter: experienceLevels=junior)."""
+    out, start, read = [], 0, 0
+    while True:
         d = get(f"{JJ}?{query}&from={start}")
         out += d["data"]
+        read += 1
         nxt, total = d["meta"]["next"]["cursor"], d["meta"]["totalItems"]
-        if not d["data"] or nxt is None or nxt >= total:
-            break
+        if not d["data"] or nxt is None or nxt >= total or nxt <= start:
+            return out
+        if pages is not None and read >= pages:
+            print(f"jj_offers({query!r}): stopped at {len(out)} of {total} offers ({pages} pages)", file=sys.stderr)
+            return out
         start = nxt
         time.sleep(0.3)
-    return out
 
 
 def nfj_offers(raw, pages):
