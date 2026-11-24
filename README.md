@@ -141,3 +141,7 @@ MIT License, see [LICENSE](LICENSE).
 ## Author
 
 Maciej Szulia: [github.com/maciejszulia](https://github.com/maciejszulia), [gitlab.com/maciejszulia](https://gitlab.com/maciejszulia).
+
+## Documentation
+
+- [Architecture (arc42, diagrams, decision records)](docs/architecture/README.md)
